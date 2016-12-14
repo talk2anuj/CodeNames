@@ -30,6 +30,7 @@ namespace Codenames.Controllers
 			return View();
 		}
 
+		
 		private IEnumerable<string> CreateColorGrid(string[] gridColors)
 		{
 			var colors = new List<string>();

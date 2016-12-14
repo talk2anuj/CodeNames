@@ -1,2 +1,5 @@
-﻿<input type="button" value="New Game"
-	   onclick="@("window.location.href='" + @Url.Action("NewGame", "Home") + "'");" />
+﻿<link href="~/MyStyles.css" rel="stylesheet" />
+<body class="codeNamesCoverPage">
+	<input class="newButton"  type="button" value="New Game" 
+		onclick="@("window.location.href='" + @Url.Action("NewGame", "Home") + "'");" />
+</body>
