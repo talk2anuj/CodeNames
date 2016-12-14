@@ -1,0 +1,37 @@
+﻿<input type="button" value="New Game"
+	   onclick="newGame()" />
+
+<h1>Select Spymaster grid @Html.Raw(ViewBag.GridNumber)</h1>
+<h1>Team @Html.Raw(ViewBag.GridColor) starts.</h1>
+
+<table>
+	@for (int i = 0; i < 5; i++)
+	{
+		<tr>
+			@for (int j = 0; j < 5; j++)
+			{
+				<td>
+					<button class="command-button" style="width:100px;background-color:white" id="@(i*5+j)"
+							onclick="showGrid( @(i*5+j), '@Html.Raw(ViewBag.Colors[i*5+j])')">
+						<span class="icon mif-share">@Html.Raw(ViewBag.Words[i * 5 + j])</span>
+					</button>
+				</td>
+			}
+		</tr>
+	}
+</table>
+
+<script>
+	function showGrid(idx, color) {
+		if (confirm("Are you sure")) {
+			document.getElementById(idx).textContent = color;
+			document.getElementById(idx).style.backgroundColor = color;
+		}
+	}
+
+	function newGame() {
+		if (confirm("Are you sure")) {
+			window.location.href = '@Url.Action("NewGame", "Home")'
+		}
+	}
+</script>
