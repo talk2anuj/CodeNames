@@ -1,17 +1,21 @@
-﻿<input type="button" value="New Game"
-	   onclick="newGame()" />
-
-<h1>Select Spymaster grid @Html.Raw(ViewBag.GridNumber)</h1>
-<h1>Team @Html.Raw(ViewBag.GridColor) starts.</h1>
-
-<table>
+﻿@*<div style="height:20%">*@
+	<table style="height:10%;width:100%;table-layout:fixed">
+		<tr style="width:100%">
+			<td style="text-align:center; font-weight:500; font-size:medium">Select Spymaster grid @Html.Raw(ViewBag.GridNumber)</td>
+			<td style="text-align:center; font-weight:500"><input type="button" value="New Game" onclick="newGame()" /></td>
+			<td style="text-align:center; font-weight:500; font-size: medium">Team @Html.Raw(ViewBag.GridColor) starts</td>
+		</tr>
+	</table>
+	
+@*</div>*@
+<table style="height:85%;width:100%;margin-top:10px;table-layout:fixed;">
 	@for (int i = 0; i < 5; i++)
 	{
-		<tr>
+		<tr style="height:20%">
 			@for (int j = 0; j < 5; j++)
 			{
 				<td>
-					<button class="command-button" style="width:100px;background-color:white" id="@(i*5+j)"
+					<button class="command-button" style="height:80%;width:80%;background-color:white;font-size:large;font-weight:700" id="@(i*5+j)"
 							onclick="showGrid( @(i*5+j), '@Html.Raw(ViewBag.Colors[i*5+j])')">
 						<span class="icon mif-share">@Html.Raw(ViewBag.Words[i * 5 + j])</span>
 					</button>
@@ -24,7 +28,8 @@
 <script>
 	function showGrid(idx, color) {
 		if (confirm("Are you sure")) {
-			document.getElementById(idx).textContent = color;
+			//document.getElementById(idx).textContent = color;
+			document.getElementById(idx).textContent = "";
 			document.getElementById(idx).style.backgroundColor = color;
 		}
 	}
