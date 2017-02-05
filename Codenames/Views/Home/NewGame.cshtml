@@ -1,7 +1,7 @@
 ﻿@*<div style="height:20%">*@
 	<table style="height:10%;width:100%;table-layout:fixed">
 		<tr style="width:100%">
-			<td style="text-align:center; font-weight:500; font-size:medium">Select Spymaster grid @Html.Raw(ViewBag.GridNumber)</td>
+			<!--<td style="text-align:center; font-weight:500; font-size:medium">Select Spymaster grid @Html.Raw(ViewBag.GridNumber)</td>-->
 			<td style="text-align:center; font-weight:500"><input type="button" value="New Game" onclick="newGame()" /></td>
 			<td style="text-align:center; font-weight:500; font-size: medium">Team @Html.Raw(ViewBag.GridColor) starts</td>
 		</tr>
@@ -28,9 +28,13 @@
 <script>
 	function showGrid(idx, color) {
 		if (confirm("Are you sure")) {
-			//document.getElementById(idx).textContent = color;
 			document.getElementById(idx).textContent = "";
-			document.getElementById(idx).style.backgroundColor = color;
+			if (color == "darkgrey") {
+				document.getElementById(idx).style.backgroundColor = "black";
+
+			} else {
+				document.getElementById(idx).style.backgroundColor = color;
+			}
 		}
 	}
 
