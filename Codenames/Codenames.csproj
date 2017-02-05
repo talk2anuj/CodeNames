@@ -236,6 +236,8 @@
     <Content Include="Content\metro-ui\fonts\iconFont.ttf" />
     <Content Include="Content\metro-ui\fonts\iconFont.json" />
     <Content Include="Content\metro-ui\fonts\iconFont.eot" />
+    <None Include="Properties\PublishProfiles\CodenamesGrid - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CodenamesGrid - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -263,6 +265,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Data\Wordlist.csv" />
     <Content Include="Views\Home\NewGame.cshtml" />
+    <Content Include="Views\Home\JoinAsSpymaster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

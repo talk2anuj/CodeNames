@@ -9,8 +9,12 @@ namespace Codenames.Controllers
 {
 	public class HomeController : Controller
 	{
-		private static Random random = new Random();
+		private static Random Random = new Random();
 		private const int GridSize = 25;
+		private static List<int> Numbers = new List<int>();
+		private static IEnumerable<string> WordsGrid;
+		private static SpymasterGrid SpymasterGrid;
+		private static IEnumerable<string> Colors;
 
 		public ActionResult Index()
 		{
@@ -19,18 +23,33 @@ namespace Codenames.Controllers
 
 		public ActionResult NewGame()
 		{
-			ViewBag.Words = CreateWordsGrid();
+			WordsGrid = CreateWordsGrid();
+			SpymasterGrid = GetSpymasterGrid();
+			Colors = CreateColorGrid(SpymasterGrid.colors);
 
-			var spymasterGrid = GetSpymasterGrid();
-
-			ViewBag.GridColor = spymasterGrid.gridColor;
-			ViewBag.GridNumber = spymasterGrid.gridNumber;
-			ViewBag.Colors = CreateColorGrid(spymasterGrid.colors);
+			ViewBag.Words = WordsGrid;
+			ViewBag.GridColor = SpymasterGrid.gridColor;
+			ViewBag.GridNumber = SpymasterGrid.gridNumber;
+			ViewBag.Colors = Colors;
 
 			return View();
 		}
 
-		
+		public ActionResult JoinAsSpymaster()
+		{
+			if(SpymasterGrid == null)
+			{
+				return View("Index");
+			}
+
+			ViewBag.Words = WordsGrid;
+			ViewBag.GridColor = SpymasterGrid.gridColor;
+			ViewBag.GridNumber = SpymasterGrid.gridNumber;
+			ViewBag.Colors = Colors;
+
+			return View();
+		}
+
 		private IEnumerable<string> CreateColorGrid(string[] gridColors)
 		{
 			var colors = new List<string>();
@@ -46,17 +65,17 @@ namespace Codenames.Controllers
 		{
 			switch (color)
 			{
-				case "B": return "Blue";
-				case "Y": return "Yellow";
-				case "R": return "Red";
-				case "X": return "Black";
+				case "B": return "deepskyblue";
+				case "Y": return "yellow";
+				case "R": return "indianred";
+				case "X": return "darkgrey";
 				default: throw new ArgumentException("Unrecognized color");
 			}
 		}
 
 		private SpymasterGrid GetSpymasterGrid()
 		{
-			var index = random.Next(1, Constants.spymasterGrids.Count());
+			var index = Random.Next(1, Constants.spymasterGrids.Count());
 			return Constants.spymasterGrids[index];
 		}
 
@@ -64,16 +83,19 @@ namespace Codenames.Controllers
 		{
 			var Words = new List<string>();
 			var numOfWords = Constants.wordList.Count();
+			if(numOfWords - Numbers.Count() < 25)
+			{
+				Numbers = new List<int>();
+			}
 
-			var numbers = new List<int>();
 			for (var i = 0; i < GridSize; i++)
 			{
-				var num = random.Next(1, numOfWords);
-				while (numbers.Contains(num))
+				var num = Random.Next(1, numOfWords);
+				while (Numbers.Contains(num))
 				{
-					num = random.Next(1, numOfWords);
+					num = Random.Next(1, numOfWords);
 				}
-				numbers.Add(num);
+				Numbers.Add(num);
 				Words.Add(Constants.wordList[num]);
 			}
 
