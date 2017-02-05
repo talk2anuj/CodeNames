@@ -208,20 +208,20 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\metro-ui\css\iconFont.min.css" />
-    <Content Include="Content\metro-ui\css\metro-bootstrap-responsive.css" />
-    <Content Include="Content\metro-ui\css\metro-bootstrap-responsive.min.css" />
-    <Content Include="Content\metro-ui\css\metro-bootstrap.css" />
-    <Content Include="Content\metro-ui\css\metro-bootstrap.min.css" />
-    <Content Include="Content\metro-ui\fonts\iconFont.dev.svg" />
-    <Content Include="Content\metro-ui\fonts\iconFont.svg" />
-    <Content Include="Content\metro-ui\fonts\metroSysIcons.svg" />
+    <Content Include="Controllers\Content\bootstrap.css" />
+    <Content Include="Controllers\Content\bootstrap.min.css" />
+    <Content Include="Controllers\Content\metro-ui\css\iconFont.min.css" />
+    <Content Include="Controllers\Content\metro-ui\css\metro-bootstrap-responsive.css" />
+    <Content Include="Controllers\Content\metro-ui\css\metro-bootstrap-responsive.min.css" />
+    <Content Include="Controllers\Content\metro-ui\css\metro-bootstrap.css" />
+    <Content Include="Controllers\Content\metro-ui\css\metro-bootstrap.min.css" />
+    <Content Include="Controllers\Content\metro-ui\fonts\iconFont.dev.svg" />
+    <Content Include="Controllers\Content\metro-ui\fonts\iconFont.svg" />
+    <Content Include="Controllers\Content\metro-ui\fonts\metroSysIcons.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Controllers\Content\Site.css" />
     <Content Include="Images\CodenamesBanner.jpg" />
     <Content Include="Images\CodeNamesCover.jpg" />
     <Content Include="MyStyles.css" />
@@ -230,12 +230,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\metro-ui\fonts\metroSysIcons.woff" />
-    <Content Include="Content\metro-ui\fonts\metroSysIcons.ttf" />
-    <Content Include="Content\metro-ui\fonts\iconFont.woff" />
-    <Content Include="Content\metro-ui\fonts\iconFont.ttf" />
-    <Content Include="Content\metro-ui\fonts\iconFont.json" />
-    <Content Include="Content\metro-ui\fonts\iconFont.eot" />
+    <Content Include="Controllers\Content\metro-ui\fonts\metroSysIcons.woff" />
+    <Content Include="Controllers\Content\metro-ui\fonts\metroSysIcons.ttf" />
+    <Content Include="Controllers\Content\metro-ui\fonts\iconFont.woff" />
+    <Content Include="Controllers\Content\metro-ui\fonts\iconFont.ttf" />
+    <Content Include="Controllers\Content\metro-ui\fonts\iconFont.json" />
+    <Content Include="Controllers\Content\metro-ui\fonts\iconFont.eot" />
     <None Include="Properties\PublishProfiles\CodenamesGrid - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CodenamesGrid - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
